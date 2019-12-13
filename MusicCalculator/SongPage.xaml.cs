@@ -10,6 +10,7 @@ namespace MusicCalculator
         public SongPage()
         {
             InitializeComponent();
+            Title = "Songs";
         }
     }
 }

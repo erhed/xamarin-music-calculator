@@ -10,6 +10,7 @@ namespace MusicCalculator
         public TimeIntervalsPage()
         {
             InitializeComponent();
+            Title = "Time intervals";
         }
     }
 }

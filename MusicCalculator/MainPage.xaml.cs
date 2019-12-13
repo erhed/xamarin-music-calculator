@@ -17,5 +17,15 @@ namespace MusicCalculator
         {
             InitializeComponent();
         }
+
+        private void Navigate_to_BPMPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new BPMPage());
+        }
+
+        private void Navigate_to_SongPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SongPage());
+        }
     }
 }

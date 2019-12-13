@@ -1,5 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MusicCalculator.SongPage">
     <ContentPage.Content>
+        <Grid             HorizontalOptions="FillAndExpand"            VerticalOptions="FillAndExpand">        <Image            Source="guitar_background.jpg"                                     Aspect="AspectFill"/>        <StackLayout
+            Margin="40"
+            Spacing="20">
+            <Entry Placeholder="Title"
+                   PlaceholderColor="#afafdb"
+                   TextColor="White"/>
+            <Entry Placeholder="Tempo"
+                   PlaceholderColor="#afafdb"
+                   TextColor="White"/>
+            <Button Text="ADD"
+                    TextColor="White"
+                    BackgroundColor="#993A6FA7"></Button>
+        </StackLayout>    </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

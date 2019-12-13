@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MusicCalculator.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MusicCalculator.MainPage"
+             NavigationPage.HasNavigationBar="false">
+    <Grid         HorizontalOptions="FillAndExpand"        VerticalOptions="FillAndExpand">        <Image            Source="guitar_background.jpg"                                     Aspect="AspectFill"/>        <StackLayout
+            Margin="40"
+            VerticalOptions="Center"
+            Spacing="20">
+            <Button Text="BPM"
+                    TextColor="White"
+                    BackgroundColor="#993A6FA7"
+                    HeightRequest="160"
+                    Clicked="Navigate_to_BPMPage"></Button>
+            <Button Text="Songs"
+                    TextColor="White"
+                    BackgroundColor="#9900ACB2"
+                    HeightRequest="160"
+                    Clicked="Navigate_to_SongPage"></Button>
+        </StackLayout>    </Grid>
+    
 </ContentPage>

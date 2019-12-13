@@ -130,4 +130,7 @@
       <Name>MusicCalculator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\guitar_background.jpg" />
+  </ItemGroup>
 </Project>
