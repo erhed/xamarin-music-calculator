@@ -31,12 +31,14 @@ namespace MusicCalculator
         {
             for (int i = 0; i < Songs.Count; i++)
             {
+                int row = Songs.Count - 1 - i;
+
                 Label titleLabel = new Label();
                 titleLabel.Text = Songs[i].Title;
                 titleLabel.TextColor = Color.FromHex("#FFFFFF");
                 titleLabel.FontSize = 16;
                 Grid.SetColumn(titleLabel, 0);
-                Grid.SetRow(titleLabel, i);
+                Grid.SetRow(titleLabel, row);
                 Song_Grid.Children.Add(titleLabel);
 
                 Label tempoLabel = new Label();
@@ -45,7 +47,7 @@ namespace MusicCalculator
                 tempoLabel.FontSize = 16;
                 tempoLabel.HorizontalTextAlignment = TextAlignment.End;
                 Grid.SetColumn(tempoLabel, 1);
-                Grid.SetRow(tempoLabel, i);
+                Grid.SetRow(tempoLabel, row);
                 Song_Grid.Children.Add(tempoLabel);
 
                 var song = Songs[i];
@@ -77,10 +79,13 @@ namespace MusicCalculator
             RenderSongs();
         }
 
+        async void DeleteSong(Song song)        {            await App.Database.DeleteSongAsync(song);            UpdateSongs();        }
+
         async void OnAddButtonClicked(object sender, EventArgs e)
         {
             string tempoString = Tempo_Entry.Text;
             int tempoInt = Convert.ToInt32(tempoString);
+
             var song = new Song
             {
                 Title = Title_Entry.Text,
@@ -93,7 +98,5 @@ namespace MusicCalculator
 
             UpdateSongs();
         }
-
-        async void DeleteSong(Song song)        {            await App.Database.DeleteSongAsync(song);            UpdateSongs();        }
     }
 }
