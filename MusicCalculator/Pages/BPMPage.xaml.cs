@@ -26,10 +26,11 @@ namespace MusicCalculator
             {
                 if (e.NewTextValue.Length > 0)
                 {
-                    double enteredBPM = Convert.ToDouble(e.NewTextValue);
+                    double enteredBPM = e.NewTextValue != "-" ? Convert.ToDouble(e.NewTextValue) : 0.0;
                     if (enteredBPM > 30)
                     {
                         Go_to_TimeIntervals.IsEnabled = true;
+                        bpmResult = enteredBPM;
                     }
                     else
                     {
@@ -72,7 +73,7 @@ namespace MusicCalculator
                 bpmTotal += bpm;
                 countClicks += 1;
                 bpmResult = (bpmTotal / countClicks) * 1000;
-                BPM_Entry.Text = bpmResult.ToString("0.0");
+                BPM_Entry.Text = bpmResult.ToString("0");
                 Go_to_TimeIntervals.IsEnabled = true;
 
                 System.Diagnostics.Debug.WriteLine(prevTime);
