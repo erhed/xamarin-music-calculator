@@ -34,6 +34,7 @@ namespace MusicCalculator
                 Label titleLabel = new Label();
                 titleLabel.Text = Songs[i].Title;
                 titleLabel.TextColor = Color.FromHex("#FFFFFF");
+                titleLabel.FontSize = 16;
                 Grid.SetColumn(titleLabel, 0);
                 Grid.SetRow(titleLabel, i);
                 Song_Grid.Children.Add(titleLabel);
@@ -41,10 +42,21 @@ namespace MusicCalculator
                 Label tempoLabel = new Label();
                 tempoLabel.Text = Songs[i].Tempo.ToString("0");
                 tempoLabel.TextColor = Color.FromHex("#FFFFFF");
+                tempoLabel.FontSize = 16;
                 tempoLabel.HorizontalTextAlignment = TextAlignment.End;
                 Grid.SetColumn(tempoLabel, 1);
                 Grid.SetRow(tempoLabel, i);
                 Song_Grid.Children.Add(tempoLabel);
+
+                var song = Songs[i];
+
+                var tapRecognizer = new TapGestureRecognizer();
+                tapRecognizer.Tapped += (s, e) =>
+                {
+                    DeleteSong(song);
+                };
+
+                titleLabel.GestureRecognizers.Add(tapRecognizer);
             }
 
             Label spaceLabel = new Label();
@@ -81,5 +93,7 @@ namespace MusicCalculator
 
             UpdateSongs();
         }
+
+        async void DeleteSong(Song song)        {            await App.Database.DeleteSongAsync(song);            UpdateSongs();        }
     }
 }
