@@ -7,10 +7,16 @@ namespace MusicCalculator
 {
     public partial class TimeIntervalsPage : ContentPage
     {
-        public TimeIntervalsPage()
+        public TimeIntervalsPage(double bpm)
         {
             InitializeComponent();
             Title = "Time intervals";
+            SetIntervals(bpm);
+        }
+
+        private void SetIntervals(double bpm)
+        {
+
         }
     }
 }

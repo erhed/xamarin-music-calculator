@@ -5,6 +5,7 @@
             Margin="40"
             Spacing="20">
             <Entry
+                x:Name="BPM_Entry"
                 Placeholder="Enter or tap tempo"
                 PlaceholderColor="#afafdb"
                 TextColor="White"/>
@@ -15,6 +16,8 @@
                 HeightRequest="160"
                 Clicked="Tap_Button_Clicked"></Button>
             <Button
+                x:Name="Go_to_TimeIntervals"
+                IsEnabled="False"
                 Text="Time intervals"
                 TextColor="White"
                 BackgroundColor="#993A6FA7"

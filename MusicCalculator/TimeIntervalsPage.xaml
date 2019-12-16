@@ -4,6 +4,11 @@
         <Grid             HorizontalOptions="FillAndExpand"            VerticalOptions="FillAndExpand">        <Image            Source="guitar_background.jpg"                                     Aspect="AspectFill"/>        <StackLayout
             Margin="40"
             VerticalOptions="Center">
+            <Label Text="BPM:"
+                   TextColor="White"></Label>
+            <Label Text="120"
+                   FontSize="Large"
+                   TextColor="White"></Label>
             
         </StackLayout>    </Grid>
     </ContentPage.Content>
