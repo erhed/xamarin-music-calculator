@@ -17,6 +17,7 @@ namespace MusicCalculator
         private void SetIntervals(double bpm)
         {
             double msPerBeat = 60000.0 / bpm;
+
             double twoOne = msPerBeat * 2;
             double oneOne = msPerBeat;
             double oneTwo = msPerBeat / 2;

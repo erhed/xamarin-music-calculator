@@ -2,18 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MusicCalculator.BPMPage">
     <ContentPage.Content>
         <Grid             HorizontalOptions="FillAndExpand"            VerticalOptions="FillAndExpand">        <Image            Source="guitar_background.jpg"                                     Aspect="AspectFill"/>        <StackLayout
-            Margin="40"
+            Margin="40, 30, 40, 0"
             Spacing="20">
             <Entry
                 x:Name="BPM_Entry"
                 Placeholder="Enter or tap tempo"
-                PlaceholderColor="#afafdb"
+                PlaceholderColor="#3A6FA7"
                 TextColor="White"/>
             <Button
                 Text="TAP"
                 TextColor="White"
                 BackgroundColor="#9900ACB2"
                 HeightRequest="160"
+                Margin="0, 15, 0, 0"
                 Clicked="Tap_Button_Clicked"></Button>
             <Button
                 x:Name="Go_to_TimeIntervals"
